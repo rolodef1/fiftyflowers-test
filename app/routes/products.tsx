@@ -93,7 +93,7 @@ export default function ProductsPage() {
           {products.map((product) => (
             <Card key={product.id} className="h-full">
               <img
-                src={product.imageUrl ?? "https://avatar.vercel.sh/shadcn1"}
+                src={product.imageUrl ?? "/images/default-product-image.png"}
                 className="relative z-20 aspect-video w-full object-cover"
               />
               <CardHeader className="space-y-1">
