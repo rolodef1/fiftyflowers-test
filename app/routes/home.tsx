@@ -27,7 +27,7 @@ export default function IndexPage() {
               reordenamiento de media.
             </p>
             <p>
-              La administración de media está habilitada para imágenes por el momento, pero la arquitectura permite fácilmente agregar otros tipos de medios en el futuro. 
+              Por el momento la administración de media está habilitada para imágenes, pero la arquitectura permite fácilmente agregar otros tipos de medios en el futuro. 
               Ademas se utiliza una relación polimórfica entre media y otros modelos, lo que permite asociar medios a diferentes tipos de recursos (productos, categorías, artículos, etc.) sin necesidad de crear tablas específicas para cada uno.
             </p>
             <p>
