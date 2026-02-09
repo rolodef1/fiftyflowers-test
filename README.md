@@ -1,87 +1,110 @@
-# Welcome to React Router!
+# Frontend Interview Test
 
-A modern, production-ready template for building full-stack React applications using React Router.
+This repository contains the frontend take-home assignment for the technical interview.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+---
 
-## Features
+## Instructions
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+Complete the assignment according to the requirements provided separately. Submit your solution by pushing your code to this repository.
 
-## Getting Started
+### Features to Implement
 
-### Installation
+**CRUD Operations for Products**
 
-Install the dependencies:
+- **List Products** — Display all products in a grid/list  
+- **Create Product** — Form to add new product  
+- **Edit Product** — Form to update existing product  
+- **Delete Product** — Remove a product with confirmation  
+- **Upload Media** — Manage media catalog (preview, upload, reorder, delete)  
+
+### Product Data Structure
+
+```ts
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  stock_quantity: number;
+  description: string;
+  category: string; // "roses" | "tulips" | "lilies" | "mixed"
+}
+```
+
+### Technical Requirements
+
+- **Framework:** Remix.js OR TanStack Start
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Forms:** react-hook-form with validation
+- **TypeScript:** Properly typed, no any
+
+### Form Validation Rules
+
+- Name: required, min 3 chars
+- Price: required, number, min 0.01
+- Stock: required, number, min 0
+- Description: required, min 10 chars, max 200 chars
+- Category: required, one of the options
+
+### What We're NOT Testing
+- Accessibility
+- URL state management
+- Lazy loading
+- Authentication
+- Complex animations
+
+### Deliverables
+
+- GitHub repository with README
+- PR with implementation, submit PR to:
+    - https://github.com/fifty-git/test-1
+    - https://github.com/fifty-git/test-2
+- Quick demo (video or deployed link)
+
+## Setup
+
+Instructions for running the project locally:
+
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
-
+2. Run in development:
 ```bash
 npm run dev
 ```
+## Tech Stack
 
-Your application will be available at `http://localhost:5173`.
+- Remix (Server + Routing)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- react-hook-form
+- Zod validation
+- Hexagonal / Clean Architecture (Domain, Service, Repository, Infrastructure)
+- Local file storage for uploads (Dokploy) + in-memory repositories
 
-## Building for Production
+## Main Features Implemented
 
-Create a production build:
+- Full Products CRUD (list, create, edit, delete with confirmation)
+- Product form with Zod + react-hook-form validation rules
+- Media manager per product:
+    - Upload (multiple)
+    - Preview
+    - Reorder
+    - Delete (with confirmation)
+- Architecture with clear separation of concerns:
+    - ```domain/``` models and invariants
+    - ```service/``` use-cases and orchestration
+    - ```persistence/``` repositories (in-memory)
+    - ```storage/``` file storage abstractions (```FileStorage``` + ```LocalFileStorage```)
+- TypeScript strictly typed (no any)
 
-```bash
-npm run build
-```
+## Deployed link
 
-## Deployment
+Quick demo deployed:
 
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+https://nextbitnesscom-fiftyflowerstest-qonxfc-735ca5-178-156-186-148.traefik.me/
